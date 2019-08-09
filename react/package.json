@@ -1,0 +1,37 @@
+{
+  "name": "sabio.web.client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "debug": "^4.1.1",
+    "formik": "^1.5.4",
+    "jquery": "3.4.1",
+    "popper.js": "1.15.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.1.0",
+    "reactstrap": "^8.0.0",
+    "sweetalert": "^2.1.2",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "postinstall": "dotnet EsLintHelper.dll",
+    "prestart": "dotnet EsLintHelper.dll",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "files.exclude": {
+    "**/.compiled": true,
+    "**/node_modules": true,
+    "util": true,
+    "killNode.ps1": true,
+    "killSomeNode.ps1": true,
+    ".gitignore": true,
+    ".eslintrc": false,
+    ".eslintrc.json": false,
+    ".babelrc": true,
+    "package-lock.json": true,
+    "yarn.lock": true,
+    "iisnode": true,
+    "iisnode.yml": true,
+    "web.config": true,
+    "link.cmd": true,
+    "shortlife.js": true,
+    "link.ps1": true,
+    "copy-modules.ps1": true,
+    "jsconfig.json": true,
+
+    "copy-modules.cmd": true,
+    "deploy.cmd": true,
+    "killNode.cmd": true
+  },
+  "debug.node.autoAttach": "on",
+  "npm.enableScriptExplorer": true
+}

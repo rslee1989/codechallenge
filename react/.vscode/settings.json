@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "enable-eslintrc.ps1": true,
+    "build": true,
+    "yarn.lock": true,
+    "node_modules": true,
+    "EsLintHelper.dll": true,
+    "EsLintHelper.runtimeconfig.json": true
+  },
+  "editor.formatOnSave": true
+}

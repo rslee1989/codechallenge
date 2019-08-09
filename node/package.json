@@ -1,0 +1,90 @@
+{
+  "name": "sabio-web-api",
+  "version": "1.0.0",
+  "description": "Express based Node Api",
+  "engines": {
+    "node": ">=10.14.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "SET SHOW_ROUTES=true && node --inspect .compiled/server.js",
+    "compile": "concurrently \"npm:babel-app\" \"npm:notify\" ",
+    "kill-node-debugger": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command \"%CD%\\killSomeNode.ps1\" ",
+    "kill-node": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command \"%CD%\\killNode.ps1\" ",
+    "~~~~~~~~ pre commit ~~~~~~~~": "",
+    "lint": "eslint --color  -f util/eslintFormatter.js sabio_modules/**/*.js app/**/*.js",
+    "babel-app": "babel app --out-dir .compiled --source-maps --watch --delete-dir-on-start",
+    "~~~~~~~~ utilityies below ~~~~~~~~": "",
+    "notify": "node util/watch.js",
+    "lint-fix": "eslint --fix --color -f util/eslintFormatter.js . ",
+    "postinstall": "npm run link-cmd",
+    "link-cmd": "PowerShell.exe \"%CD%\\link.ps1\" ",
+    "spinup-die": "node shortlife.js",
+    "check-integrity": "del-cli .compiled && babel app --out-dir .compiled --delete-dir-on-start && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://code.sabio.la:8080/tfs/SabioCollection/"
+  },
+  "author": "Sabio - Gregorio Rojas",
+  "license": "ISC",
+  "displayName": "SabioApi",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "chokidar": "^3.0.0",
+    "commander": "^2.20.0",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "extend": "^3.0.2",
+    "fs": "0.0.2",
+    "helmet": "^3.18.0",
+    "http-errors": "^1.7.2",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "mssql": "^5.1.0",
+    "nodemon": "^1.19.0",
+    "reflect-metadata": "^0.1.13",
+    "require-all": "^3.0.0",
+    "socket.io": "^2.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run spinup-die"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@ljharb/eslint-config": "^13.1.1",
+    "babel-code-frame": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-decorators-legacy": "1.3.5",
+    "babel-watch": "git+https://git@github.com/kmagiera/babel-watch.git",
+    "del-cli": "^1.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-hapi": "^12.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.9.0",
+    "eslint-plugin-hapi": "^4.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.3.0",
+    "install": "^0.12.2",
+    "npm-run-all": "^4.1.5"
+  }
+}

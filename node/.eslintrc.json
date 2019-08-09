@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "parser": "babel-eslint",
+
+  "rules": {
+    "quotes": [0, "always"],
+    "semi": [0, "never"],
+    "space-before-function-paren": [0, "never"],
+    "indent": ["error", 2],
+    "camelcase": ["error", { "properties": "always" }],
+    "spaced-comment": [0, "never"]
+  }
+}
